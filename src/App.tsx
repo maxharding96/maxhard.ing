@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button'
 import { CloudDownload, Mail } from 'lucide-react'
 import { Projects } from '@/components/projects'
 import { MY_GITHUB } from '@/pages'
-import { Separator } from '@/components/ui/separator'
 
 interface NavigationButtonProps {
   onClick?: () => void
@@ -36,7 +35,7 @@ function HeaderButtons() {
   return (
     <div className="flex gap-2">
       <Button variant="outline" className="rounded-2xl" asChild>
-        <a href={`src/assets/my_cv.pdf`} download="Max Harding CV.pdf">
+        <a href="/files/my_cv.pdf" download="Max Harding CV.pdf">
           <CloudDownload />
           Download CV
         </a>
@@ -90,8 +89,8 @@ function App() {
   }
 
   return (
-    <div className="h-full min-w-3xl flex flex-col items-center py-4 px-8">
-      <div className="w-full lg:w-4/5 xl:w-2/3 grid grid-cols-3 bg-white z-10 pb-2">
+    <div className="h-screen min-w-3xl flex flex-col items-center py-4 px-8 bg-accent">
+      <div className="w-full lg:w-4/5 xl:w-2/3 grid grid-cols-3 bg-accent z-10 pb-2">
         <div>
           <Button
             variant="link"
@@ -124,26 +123,23 @@ function App() {
         ref={mainRef}
         className="flex flex-1 overflow-y-auto justify-center py-8"
       >
-        <div className="w-full lg:w-4/5 xl:w-2/3 space-y-10">
+        <div className="w-full lg:w-4/5 xl:w-2/3 space-y-16">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-4xl">Hey, I'm Max Harding 👋</p>
               <p className="text-4xl">
                 I'm a{' '}
-                <span className="font-bold text-indigo-700">
+                <span className="font-bold text-primary">
                   Fullstack Engineer
                 </span>
               </p>
             </div>
             <div />
 
-            <img className="rounded-full w-3xs " src="src/assets/me.jpg" />
+            <img className="rounded-full w-3xs " src="/files/me.jpg" />
             <div />
           </div>
           <AboutMe ref={aboutMeRef} />
-          <div>
-            <Separator className="my-4" />
-          </div>
           <Projects ref={projectsRef} />
         </div>
       </div>
