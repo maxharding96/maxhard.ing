@@ -63,9 +63,18 @@
       "id": "subtitle_ai",
       "title": "SubtitleAI",
       "description": [
-        "🎬 A Python CLI tool to generate and embed subtitles for your videos."
+        "🎬 A simple, interactive Python CLI tool to generate and embed multilingual subtitles. It can be used on local files or fetch directly from Youtube."
       ],
-      "assets": [],
+      "assets": [
+        {
+          "name": "demo.gif",
+          "description": "Demo adding French subtitles to a local file."
+        },
+        {
+          "name": "output.gif",
+          "description": "Clip of output file with French subtitles."
+        }
+      ],
       "technologies": [
         "Python",
         "ElevenLabs",

@@ -66,14 +66,18 @@ function Project(props: ProjectProps) {
         )}
       </CardHeader>
       <CardContent className="flex justify-center px-18">
-        <Carousel className="" opts={{ loop: true }}>
+        <Carousel className="min-w-xl" opts={{ loop: true }}>
           <CarouselContent>
             {assets.map((props, i) => (
               <ProjectAsset key={i} projectId={id} {...props} />
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          {assets.length > 2 && (
+            <>
+              <CarouselPrevious />
+              <CarouselNext />
+            </>
+          )}
         </Carousel>
       </CardContent>
     </Card>
