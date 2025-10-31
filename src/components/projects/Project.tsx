@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/carousel'
 import { Badge } from '@/components/ui/badge'
 import { SiGithub } from 'react-icons/si'
-import { CDN_URL, MY_GITHUB } from '@/pages'
+import { MY_GITHUB } from '@/pages'
 
 type ProjectAssetProps = {
   projectId: string
@@ -42,7 +42,7 @@ type ProjectProps = {
 function Project(props: ProjectProps) {
   const { id, title, description, assets, technologies, github, url } = props
   return (
-    <Card>
+    <Card className="bg-slate-50">
       <CardHeader className="gap-4">
         <CardTitle className="text-xl">
           <a href={url}>{title}</a>
@@ -108,5 +108,5 @@ function readProjectData(): schema.Projects {
 }
 
 function getAssetUrl({ projectId, name }: { projectId: string; name: string }) {
-  return `${CDN_URL}/assets/${projectId}/${name}`
+  return `/projects/${projectId}/${name}`
 }
