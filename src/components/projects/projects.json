@@ -8,7 +8,12 @@
         "The project began after I found many existing AI language tools to be expensive and overly complicated.",
         "My goal is to create a streamlined app where users can practise with an AI tutor."
       ],
-      "assets": [],
+      "assets": [
+        {
+          "name": "demo.png",
+          "description": ""
+        }
+      ],
       "technologies": [
         "Typescript",
         "React",
