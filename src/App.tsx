@@ -62,8 +62,8 @@ function App() {
   }
 
   return (
-    <div className="h-screen min-w-3xl flex flex-col items-center py-4">
-      <div className="w-full xl:w-4/5 2xl:w-2/3 grid grid-cols-3 z-10 pb-2 px-8">
+    <div className="fixed inset-0 min-w-3xl flex flex-col items-center py-4">
+      <div className="w-full xl:w-4/5 2xl:w-2/3 grid grid-cols-3 z-10 pb-2 px-8 shrink-0">
         <div>
           <Button
             variant="link"
