@@ -21,16 +21,21 @@ import { MY_GITHUB } from '@/pages'
 
 type ProjectAssetProps = {
   projectId: string
+  assetCount: number
 } & schema.ProjectAsset
 
 function ProjectAsset(props: ProjectAssetProps) {
-  const { projectId, name, description } = props
+  const { projectId, assetCount, name, description } = props
 
   const url = getAssetUrl({ projectId, name })
 
+  const getClassname = () => {
+    if (assetCount > 1) return 'basis-1/2'
+  }
+
   return (
-    <CarouselItem className="basis-1/2">
-      <img src={url} alt={description} />
+    <CarouselItem className={getClassname()}>
+      <img src={url} alt={description} className="border rounded-sm" />
     </CarouselItem>
   )
 }
@@ -41,6 +46,9 @@ type ProjectProps = {
 
 function Project(props: ProjectProps) {
   const { id, title, description, assets, technologies, github, url } = props
+
+  const assetCount = assets.length
+
   return (
     <Card className="bg-slate-50">
       <CardHeader className="gap-4">
@@ -65,11 +73,16 @@ function Project(props: ProjectProps) {
           </CardAction>
         )}
       </CardHeader>
-      <CardContent className="flex justify-center px-18">
-        <Carousel className="min-w-xl" opts={{ loop: true }}>
+      <CardContent className="px-18">
+        <Carousel opts={{ loop: assetCount > 2 }}>
           <CarouselContent>
             {assets.map((props, i) => (
-              <ProjectAsset key={i} projectId={id} {...props} />
+              <ProjectAsset
+                key={i}
+                projectId={id}
+                assetCount={assets.length}
+                {...props}
+              />
             ))}
           </CarouselContent>
           {assets.length > 2 && (

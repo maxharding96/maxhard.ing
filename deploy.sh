@@ -8,7 +8,6 @@ npm run build
 echo "Syncing to S3..."
 aws s3 sync dist/ s3://amazon-cloudfront-secure-static-site--s3bucketroot-hm1thldfjbgk \
   --delete \
-  --exclude "projects/*" \
   --cache-control "public, max-age=31536000" \
   --exclude "index.html" \
 
