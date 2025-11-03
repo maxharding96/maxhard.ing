@@ -56,7 +56,7 @@ function Project(props: ProjectProps) {
           <a href={url}>{title}</a>
         </CardTitle>
         {technologies && (
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap">
             {technologies?.map((t) => (
               <Badge
                 key={t}
@@ -77,7 +77,7 @@ function Project(props: ProjectProps) {
           </CardAction>
         )}
       </CardHeader>
-      <CardContent className="px-18">
+      <CardContent className={assetCount > 2 ? 'px-18' : undefined}>
         <Carousel opts={{ loop: assetCount > 2 }}>
           <CarouselContent>
             {assets.map((props, i) => (
@@ -89,7 +89,7 @@ function Project(props: ProjectProps) {
               />
             ))}
           </CarouselContent>
-          {assets.length > 2 && (
+          {assetCount > 2 && (
             <>
               <CarouselPrevious />
               <CarouselNext />
