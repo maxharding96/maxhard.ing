@@ -58,7 +58,11 @@ function Project(props: ProjectProps) {
         {technologies && (
           <div className="flex gap-1">
             {technologies?.map((t) => (
-              <Badge key={t} variant="secondary" className="text-sm">
+              <Badge
+                key={t}
+                variant="outline"
+                className="text-sm bg-background"
+              >
                 {t}
               </Badge>
             ))}
