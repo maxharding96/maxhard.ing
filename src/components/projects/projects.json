@@ -24,9 +24,21 @@
       "id": "betmax",
       "title": "BetMax",
       "description": [
-        "⚽ A Node.js CLI tool that scrapes football stats and betting odds to find and export the best value bets."
+        "⚽ BetMax is a TypeScript CLI tool that finds value bets in football player markets.",
+        "It works by scraping current player statistics and applies Poisson distribution models to calculate fair odds for player markets.",
+        "The tool then compares these predictions against live bookmaker odds, generating a spreadsheet of opportunities ranked by Expected Value (EV) to identify mathematically advantageous bets.",
+        "So far this season, I'm up 73% by following the opportunities identified by BetMax!"
       ],
-      "assets": [],
+      "assets": [
+        {
+          "name": "demo.gif",
+          "description": "Demo getting best odds for a match."
+        },
+        {
+          "name": "output.png",
+          "description": "Output spreadsheet"
+        }
+      ],
       "technologies": [
         "Typescript",
         "Node.js"
@@ -37,7 +49,7 @@
       "id": "sound_system",
       "title": "DIY Sound System",
       "description": [
-        "Over the past few years, I’ve designed and built my own sound system, which I have run at small live music events across London.",
+        "🔉 Over the past few years, I’ve designed and built my own sound system, which I have run at small live music events across London.",
         "I’ve enjoyed being hands-on with the whole process, from building and wiring the cabinets to programming the system for each event."
       ],
       "assets": [
@@ -86,7 +98,7 @@
       "id": "goodness",
       "title": "Goodness",
       "description": [
-        "I previously co-founded my own promotion company, Goodness, with a couple of friends from university at the start of 2016.",
+        "🎉 I previously co-founded my own promotion company, Goodness, with a couple of friends from university at the start of 2016.",
         "We ran a events across London, Oxford, Manchester and Bristol, ranging from intimate basements to big day parties."
       ],
       "assets": [
