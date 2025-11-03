@@ -60,11 +60,11 @@ export function Menu(props: MenuProps) {
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
-                <NavigationButton minimized onClick={onClickAboutMe}>
-                  About Me
+                <NavigationButton minimized asChild onClick={onClickAboutMe}>
+                  <div>About Me</div>
                 </NavigationButton>
-                <NavigationButton minimized onClick={onClickProjects}>
-                  Projects
+                <NavigationButton minimized asChild onClick={onClickProjects}>
+                  <div>Projects</div>
                 </NavigationButton>
                 <NavigationButton minimized asChild>
                   <a href={MY_GITHUB}>Github</a>

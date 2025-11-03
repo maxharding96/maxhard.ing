@@ -50,7 +50,7 @@ function Project(props: ProjectProps) {
   const assetCount = assets.length
 
   return (
-    <Card className="bg-slate-50">
+    <Card className="bg-accent">
       <CardHeader className="gap-4">
         <CardTitle className="text-xl">
           <a href={url}>{title}</a>
@@ -101,7 +101,7 @@ export const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   const data = readProjectData()
 
   return (
-    <div ref={ref} className="flex flex-col gap-y-2">
+    <div ref={ref} className="flex flex-col gap-y-4">
       <p className="text-3xl">Projects</p>
       <p className="text-lg font-light">
         Independent projects I've worked on over the years.

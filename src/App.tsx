@@ -25,7 +25,7 @@ function HeaderButtons() {
 
 const AboutMe = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div ref={ref} className="space-y-2">
+    <div ref={ref} className="space-y-4">
       <p className="text-3xl">About me</p>
       Passionate & self-driven fullstack engineer with 4 years of experience
       building & scaling web applications using{' '}
@@ -62,15 +62,15 @@ function App() {
   }
 
   return (
-    <div className="h-screen min-w-3xl flex flex-col items-center py-4 px-8">
-      <div className="w-full xl:w-4/5 2xl:w-2/3 grid grid-cols-3 z-10 pb-2">
+    <div className="h-screen min-w-3xl flex flex-col items-center py-4">
+      <div className="w-full xl:w-4/5 2xl:w-2/3 grid grid-cols-3 z-10 pb-2 px-8">
         <div>
           <Button
             variant="link"
             className="text-md px-0 font-bold"
             onClick={scrollToTop}
           >
-            maxhard.ingx
+            maxhard.ing
           </Button>
         </div>
         <Menu
@@ -84,7 +84,7 @@ function App() {
       </div>
       <div
         ref={mainRef}
-        className="flex flex-1 overflow-y-auto justify-center py-8"
+        className="flex flex-1 overflow-y-auto justify-center p-8"
       >
         <div className="w-full xl:w-4/5 2xl:w-2/3 space-y-16">
           <div className="flex justify-between items-center">
