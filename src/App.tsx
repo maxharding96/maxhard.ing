@@ -1,35 +1,8 @@
 import { useRef, forwardRef, type RefObject } from 'react'
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from '@/components/ui/navigation-menu'
 import { Button } from '@/components/ui/button'
 import { CloudDownload, Mail } from 'lucide-react'
 import { Projects } from '@/components/projects'
-import { MY_GITHUB } from '@/pages'
-
-interface NavigationButtonProps {
-  onClick?: () => void
-  asChild?: boolean
-}
-
-function NavigationButton(
-  props: React.PropsWithChildren<NavigationButtonProps>
-) {
-  const { onClick, asChild, children } = props
-  return (
-    <NavigationMenuItem onClick={onClick}>
-      <NavigationMenuLink
-        asChild={asChild}
-        className="text-md font-normal cursor-pointer"
-      >
-        {children}
-      </NavigationMenuLink>
-    </NavigationMenuItem>
-  )
-}
+import { Menu } from './components/Menu'
 
 function HeaderButtons() {
   return (
@@ -89,32 +62,22 @@ function App() {
   }
 
   return (
-    <div className="h-screen min-w-3xl flex flex-col items-center py-4 px-8 bg-accent">
-      <div className="w-full lg:w-4/5 xl:w-2/3 grid grid-cols-3 bg-accent z-10 pb-2">
+    <div className="h-screen min-w-3xl flex flex-col items-center py-4 px-8">
+      <div className="w-full xl:w-4/5 2xl:w-2/3 grid grid-cols-3 z-10 pb-2">
         <div>
           <Button
             variant="link"
             className="text-md px-0 font-bold"
             onClick={scrollToTop}
           >
-            maxhard.ing
+            maxhard.ingx
           </Button>
         </div>
-        <div className="flex justify-center">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationButton onClick={() => scrollToRef(aboutMeRef)}>
-                About Me
-              </NavigationButton>
-              <NavigationButton onClick={() => scrollToRef(projectsRef)}>
-                Projects
-              </NavigationButton>
-              <NavigationButton asChild>
-                <a href={MY_GITHUB}>Github</a>
-              </NavigationButton>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <Menu
+          onClickAboutMe={() => scrollToRef(aboutMeRef)}
+          onClickProjects={() => scrollToRef(projectsRef)}
+        />
+
         <div className="flex justify-end">
           <HeaderButtons />
         </div>
@@ -123,7 +86,7 @@ function App() {
         ref={mainRef}
         className="flex flex-1 overflow-y-auto justify-center py-8"
       >
-        <div className="w-full lg:w-4/5 xl:w-2/3 space-y-16">
+        <div className="w-full xl:w-4/5 2xl:w-2/3 space-y-16">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-4xl">Hey, I'm Max Harding 👋</p>
@@ -136,7 +99,10 @@ function App() {
             </div>
             <div />
 
-            <img className="rounded-full w-3xs " src="/files/me.jpg" />
+            <img
+              className="rounded-full w-3xs hidden lg:block"
+              src="/files/me.jpg"
+            />
             <div />
           </div>
           <AboutMe ref={aboutMeRef} />
